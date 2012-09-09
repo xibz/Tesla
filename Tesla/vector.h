@@ -26,6 +26,13 @@ namespace Tesla
 				x-=v.getX();
 				y-=v.getY();
 			}
+			void compProd(Vector2i &v)
+			{//Updates the calling vector and performs a compenant product 
+				x*=v.getX();
+				y*=v.getY();
+			}
+			Int32 operator*(Vector2i &v){ return x*v.getX()+y*v.getY(); }
+			Vector2i compProduct(Vector2i &v){ return Vector2i(x*v.getX(), y*v.getY()); }
 			Vector2i operator+(Vector2i v){ return Vector2i(x+v.getX(), y+v.getY()); }
 			Vector2i operator-(Vector2i v){ return Vector2i(x-v.getX(), y-v.getY()); }
 			Int32 getX() { return x; }
@@ -56,6 +63,13 @@ namespace Tesla
 				x-=v.getX();
 				y-=v.getY();
 			}
+			void compProd(Vector2f &v)
+			{//Updates the calling vector and performs a compenant product 
+				x*=v.getX();
+				y*=v.getY();
+			}
+			Real operator*(Vector2i &v){ return x*v.getX()+y*v.getY(); }
+			Vector2f compProduct(Vector2f &v){ return Vector2f(x*v.getX(), y*v.getY()); }
 			Vector2f operator+(Vector2f v){ return Vector2f(x+v.getX(), y+v.getY()); }
 			Vector2f operator-(Vector2f v){ return Vector2f(x-v.getX(), y-v.getY()); }
 			Real getX() { return x; }
@@ -89,6 +103,14 @@ namespace Tesla
 				y-=v.getY();
 				z-=v.getZ();
 			}
+			void compProd(Vector3i &v)
+			{//Updates the calling vector and performs a compenant product 
+				x*=v.getX();
+				y*=v.getY();
+				z*=v.getZ();
+			}
+			Int32 operator*(Vector3i &v){ return x*v.getX()+y*v.getY()+z*v.getZ(); }
+			Vector3i compProduct(Vector3i &v){ return Vector3i(x*v.getX(), y*v.getY(), z*v.getZ()); }
 			Vector3i operator+(Vector3i v){ return Vector3i(x+v.getX(), y+v.getY(), z+v.getZ()); }
 			Vector3i operator-(Vector3i v){ return Vector3i(x-v.getX(), y-v.getY(), z-v.getZ()); }
 			Int32 getX() { return x; }
@@ -117,6 +139,14 @@ namespace Tesla
 				y-=v.getY();
 				z-=v.getZ();
 			}
+			void compProd(Vector3f &v)
+			{//Updates the calling vector and performs a compenant product 
+				x*=v.getX();
+				y*=v.getY();
+				z*=v.getZ();
+			}
+			Real operator*(Vector3f &v){ return x*v.getX()+y*v.getY()+z*v.getZ(); }
+			Vector3f compProduct(Vector3f &v){ return Vector3f(x*v.getX(), y*v.getY(), z*v.getZ()); }
 			Vector3f operator+(Vector3f v){ return Vector3f(x+v.getX(), y+v.getY(), z+v.getZ()); }
 			Vector3f operator-(Vector3f v){ return Vector3f(x-v.getX(), y-v.getY(), z-v.getZ()); }
 			Real getX() { return x; }
