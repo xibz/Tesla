@@ -31,6 +31,11 @@ namespace Tesla
 				x*=v.getX();
 				y*=v.getY();
 			}
+			void normalize()
+			{
+				Int32 m = magnitude();
+				if(m)(*this)*=((Int32)m)/m;
+			}
 			Int32 operator*(Vector2i &v){ return x*v.getX()+y*v.getY(); }
 			Vector2i compProduct(Vector2i &v){ return Vector2i(x*v.getX(), y*v.getY()); }
 			Vector2i operator+(Vector2i v){ return Vector2i(x+v.getX(), y+v.getY()); }
@@ -67,6 +72,11 @@ namespace Tesla
 			{//Updates the calling vector and performs a compenant product 
 				x*=v.getX();
 				y*=v.getY();
+			}
+			void normalize()
+			{
+				Real m = magnitude();
+				if(m>0.0f)(*this)*=((Real)m)/m;
 			}
 			Real operator*(Vector2i &v){ return x*v.getX()+y*v.getY(); }
 			Vector2f compProduct(Vector2f &v){ return Vector2f(x*v.getX(), y*v.getY()); }
@@ -109,6 +119,11 @@ namespace Tesla
 				y*=v.getY();
 				z*=v.getZ();
 			}
+			void normalize()
+			{
+				Int32 m = magnitude();
+				if(m)(*this)*=((Int32)m)/m;
+			}
 			Int32 operator*(Vector3i &v){ return x*v.getX()+y*v.getY()+z*v.getZ(); }
 			Vector3i compProduct(Vector3i &v){ return Vector3i(x*v.getX(), y*v.getY(), z*v.getZ()); }
 			Vector3i operator+(Vector3i v){ return Vector3i(x+v.getX(), y+v.getY(), z+v.getZ()); }
@@ -127,6 +142,12 @@ namespace Tesla
 			Vector3f(const Real x, const Real y, const Real z): x(x), y(y), z(z){}
 			Real magnitude() { return sqrt(x*x+y*y+z*z); }
 			Vector3f operator*(const Real c) { return Vector3f(x*c, y*c, z*c); }
+			void operator*=(const Real c)
+			{
+				x *= c;
+				y *= c;
+				z *= c;
+			}
 			void operator+=(Vector3f& v)
 			{
 				x+=v.getX();
@@ -144,6 +165,11 @@ namespace Tesla
 				x*=v.getX();
 				y*=v.getY();
 				z*=v.getZ();
+			}
+			void normalize()
+			{
+				Real m = magnitude();
+				if(m>0.0f)(*this)*=((Real)m)/m;
 			}
 			Real operator*(Vector3f &v){ return x*v.getX()+y*v.getY()+z*v.getZ(); }
 			Vector3f compProduct(Vector3f &v){ return Vector3f(x*v.getX(), y*v.getY(), z*v.getZ()); }
