@@ -21,7 +21,13 @@ namespace Tesla
 				x+=v.getX();
 				y+=v.getY();
 			}
+			void operator-=(Vector2i& v)
+			{
+				x-=v.getX();
+				y-=v.getY();
+			}
 			Vector2i operator+(Vector2i v){ return Vector2i(x+v.getX(), y+v.getY()); }
+			Vector2i operator-(Vector2i v){ return Vector2i(x-v.getX(), y-v.getY()); }
 			Int32 getX() { return x; }
 			Int32 getY() { return y; }
 		private:
@@ -45,7 +51,13 @@ namespace Tesla
 				x+=v.getX();
 				y+=v.getY();
 			}
+			void operator-=(Vector2f& v)
+			{
+				x-=v.getX();
+				y-=v.getY();
+			}
 			Vector2f operator+(Vector2f v){ return Vector2f(x+v.getX(), y+v.getY()); }
+			Vector2f operator-(Vector2f v){ return Vector2f(x-v.getX(), y-v.getY()); }
 			Real getX() { return x; }
 			Real getY() { return y; }
 		private:
@@ -71,7 +83,14 @@ namespace Tesla
 				y+=v.getY();
 				z+=v.getZ();
 			}
+			void operator-=(Vector3i& v)
+			{
+				x-=v.getX();
+				y-=v.getY();
+				z-=v.getZ();
+			}
 			Vector3i operator+(Vector3i v){ return Vector3i(x+v.getX(), y+v.getY(), z+v.getZ()); }
+			Vector3i operator-(Vector3i v){ return Vector3i(x-v.getX(), y-v.getY(), z-v.getZ()); }
 			Int32 getX() { return x; }
 			Int32 getY() { return y; }
 			Int32 getZ() { return z; }
@@ -92,7 +111,14 @@ namespace Tesla
 				y+=v.getY();
 				z+=v.getZ();
 			}
+			void operator-=(Vector3f& v)
+			{
+				x-=v.getX();
+				y-=v.getY();
+				z-=v.getZ();
+			}
 			Vector3f operator+(Vector3f v){ return Vector3f(x+v.getX(), y+v.getY(), z+v.getZ()); }
+			Vector3f operator-(Vector3f v){ return Vector3f(x-v.getX(), y-v.getY(), z-v.getZ()); }
 			Real getX() { return x; }
 			Real getY() { return y; }
 			Real getZ() { return z; }
